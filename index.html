@@ -1,1326 +1,151 @@
-<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Claim eCard</title>
-
-        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-    <meta name="description" content="American Heart Association Intructors Network eCards">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/vnd.microsoft.icon">
-    <link rel="apple-touch-icon" href="images/aha_heart_torch_180.png">
-    <!--CSS-->
-    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="css/core.css" rel="stylesheet">
-
-    <link href="css/main.css" rel="stylesheet">
-
-    <link href="css/animate.css" rel="stylesheet">
-
-    <link href="css/bootstrap-multiselect.css" rel="stylesheet">
-
-    <link href="css/utility.css" rel="stylesheet">
-
-    <link href="css/ecards-template.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="css/aha-header-external-responsive.v2.css" type="text/css" media="all">
-    <link href="css/ecards-help-page-helper.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-<script>(window.jquery)||document.write('<script src="/Assets/bundles/jquery"><\/script>');</script>
-
-    <script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-
-        <!-- OneTrust Cookies Consent Notice start for ecards.heart.org -->
-        <script src="js/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="15ef902d-c99f-4814-80e4-01934bc73786"></script>
-        <!-- OneTrust Cookies Consent Notice end for ecards.heart.org -->
-
-    <!-- Google Tag Manager -->
-    <script type="text/plain" class="optanon-category-C0002">
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-MJGNJ66');</script>
-    <!-- End Google Tag Manager -->
-
-    <script type="text/plain" class="optanon-category-C0002">
-        var appInsights=window.appInsights||function(config){
-            function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
-        }({
-            instrumentationKey: "583cdba3-fd62-4082-aa40-fef922cf6986"
-        });
-
-        window.appInsights=appInsights;
-        appInsights.trackPageView();
-    </script>
-    <!-- Coveo scripts. -->
-    <link rel="stylesheet" href="css/CoveoFullSearchNewDesign.css">
-    <link rel="stylesheet" href="css/AHACoveoFullSearchNewDesign.css">
-    <script type="text/javascript" src="js/CoveoJsSearch.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Claim eCard - Clone</title>
+  <style>
+    /* Minimal styling to mimic uploaded layout */
+    :root{--primary:#c10e21;--muted:#6b6b6b;--bg:#f8f9fa}
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#222}
+    .topbar{background:#fff;border-bottom:1px solid #e6e6e6;padding:12px 20px;display:flex;align-items:center;gap:16px}
+    .logo{height:36px}
+    .container{max-width:980px;margin:24px auto;padding:0 16px}
+    .card{background:#fff;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.06);overflow:hidden;padding:20px}
+    .heading{font-size:20px;color:var(--primary);margin:0 0 8px 0}
+    .text-md{font-size:15px;color:var(--muted);margin-bottom:12px}
+    .grid{display:flex;gap:24px;flex-wrap:wrap}
+    .col{flex:1 1 240px;min-width:220px}
+    .label{display:inline-block;background:#e9f6ff;color:#146; padding:6px 8px;border-radius:3px;font-weight:600}
+    .h5{margin:6px 0;font-size:18px}
+    .form-group{margin-top:10px}
+    select.form-control{width:100%;padding:8px;border:1px solid #ddd;border-radius:4px}
+    button.btn{padding:8px 12px;border-radius:4px;border:0;cursor:pointer}
+    .btn-primary{background:var(--primary);color:#fff}
+    .btn-secondary{background:#6c757d;color:#fff}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    footer{margin-top:20px;padding:12px;color:#666;text-align:center;font-size:13px}
+    /* modal */
+    .modal-backdrop{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+    .modal{background:#fff;padding:18px;border-radius:6px;max-width:820px;width:94%;max-height:90vh;overflow:auto}
+    .modal .close{float:right;border:0;background:none;font-size:20px;cursor:pointer}
+    @media(max-width:520px){.grid{flex-direction:column}}
+  </style>
 </head>
-
-<body class="ecard" id="bdyeCard">
-    <script>
-        Coveo.Dom.useNativeJavaScriptEvents = true;
-        document.addEventListener('DOMContentLoaded', function () {
-            Coveo.initSearchbox(document.body, 'https://www.heart.org/en/search');
-        })
-    </script>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe data-src="https://www.googletagmanager.com/ns.html?id=GTM-MJGNJ66"
-                height="0" width="0" style="display:none;visibility:hidden" class="optanon-category-C0002"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <input type="hidden" value="/Student/Account/SignOut" id="hdnTimeOutUrl">
-    <input name="__RequestVerificationToken" type="hidden" value="uzZUihwqXIdKG5g1hcuhgrWgaEG7mZyKmptliwgdSSaKbAQv3BOOPIQICrXeIpCM5-xNmktwKYmCrs-_VeeAGsEexm0zGe-drkuetviGjSw1">
-
-    <script type="text/javascript">
-
-
-        var serverAddress = 'https://ecards.heart.org/api/relay/v1';
-        var currentController = 'eCards';
-        var area = "Student";
-        var tcAssignmentViewModel = {"CourseId":null,"RoleId":null,"CourseName":null,"LocationId":null,"LocationName":null,"ReclaimSourceId":0,"ReclaimSourceName":null,"IsInstructorReclaim":false,"InstructorId":0,"InstructorName":null,"AvailableQty":0,"AssignedQty":0,"TCId":0,"TCName":null,"TSId":null,"TSName":null,"UserRole":null,"UserRoles":null,"ECardLocations":[],"Courses":[],"TrainingCenters":[],"Instructors":null,"InstructorQtyList":[],"CompletedTransactions":[],"ErrorMessage":null,"IsPartialComplete":false,"ShowHelpVideo":false};
-        var eLocAssignmentViewModel = {"CourseId":null,"RoleId":null,"CourseName":null,"LocationId":null,"LocationName":null,"ReclaimSourceId":0,"ReclaimSourceName":null,"IsInstructorReclaim":false,"InstructorId":0,"InstructorName":null,"AvailableQty":0,"AssignedQty":0,"TCId":0,"TCName":null,"TSId":null,"TSName":null,"UserRole":null,"UserRoles":null,"ECardLocations":[],"Courses":[],"TrainingCenters":[],"Instructors":null,"InstructorQtyList":[],"CompletedTransactions":[],"ErrorMessage":null,"IsPartialComplete":false,"ShowHelpVideo":false};
-        var reportViewModel = {"UserRole":null,"RoleId":0,"IsDualRole":false,"TrainingCenters":[],"Instructors":[],"ECardLocations":[],"TrainingSites":[],"TcId":0,"LocationId":null,"TsId":null,"InstructorId":null,"TcIdNumber":null,"StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","CourseId":0,"DisciplineId":0,"Courses":[],"Disciplines":[],"IsAdmin":false};
-        var languages = [];
-        var isOverlayed = '';
-        var analyticsCode = 'UA-18706625-19';
-        var isInternational = 'True';
-
-        var RoleType = {
-            SuperUser : {value: 2660010},
-            CSR : {value: 12500004},
-            ECCAdmin : {value: 2660012},
-            TCC : {value: 2300009},
-            TCAdmin : {value: 2300010},
-            EcardAdmin : {value: 12500024},
-            StandardRegister : {value: 12500015},
-            Distributor : {value: 2660013},
-            Instructor : {value: 2660004},
-            Student : {value: 2660011},
-            NECAdmin : {value: 12500023},
-            DevAdmin: { value: 12500025 },
-            TSC: { value: 12500027 },
-            TSAdmin: { value: 12500026 },
-        };
-
-        var resources = {}; // Global variable.
-
-        var gdateformat = "mm/dd/yy";// Global variable.
-
-        (function ($) {
-            $.ajax({
-                dataType: "json",
-                url: "/Resource/GetCulture",
-                success: function (data) {
-                    if (data && data.length > 0) {
-                        languages = $.grep(data, function (n, i) {
-                            return n.IsActive == true;
-                        });
-                    }
-
-                    $.getJSON("/Resource/GetResources", function (data) {
-                        resources = data;
-                        if (window.isInternational == 'True') {
-                            LoadCulture();
-                        }
-                    });
-                },
-                cache: true
-            });
-
-        })(jQuery);
-
-        function fnChangeLanguage(obj) {
-
-            var cb = function (data) {
-                window.location.href = window.location.href;
-            };
-
-            setCulture(obj.value, cb);
-        }
-
-        function NavigateToInstNw(e) {
-            e.preventDefault();
-            (function ($) {
-                $.get("/Base/RedirectToInstNetwork",
-                    function(data) {
-                        if (data === "True") {
-                            window.location.href = $(e.target).data("url");
-                        }
-                    });
-            })(jQuery);
-        }
-
-        var LoadCulture = function () {
-            if (languages && languages.length > 1) {
-                $(".ddlLanguage").toggleClass("hide", false);
-                var subItems = [];
-                subItems.push($("<option/>", { value: "", text: window.resources["SelectLanguage"] }));
-                $.each(languages,
-                    function (index, item) {
-                        subItems.push($("<option/>", { value: item.Code, text: item.NativeLabel }));
-                    });
-                $(".ddlLanguage").empty().append(subItems);
-            }
-
-            var selectedLanguage = GetCookie("_eCardsculture");
-            if (selectedLanguage == null) {
-                var cb = function (data) { };
-                setCulture("en-US", cb);
-            }
-
-            $(".ddlLanguage").val(selectedLanguage);
-        };
-
-        var setCulture = function (input, cb) {
-            $.ajax({
-                url: "/Resource/ModifyCulture",
-                data: { cultureName: input },
-                method: "POST",
-                success: function (data) {
-                    cb(data);
-                },
-                cache: false
-            });
-        };
-
-        function TimeOut(){
-            $('#timeOutModal').modal('show');
-            TimerLogout();
-        }
-
-        function TimerLogout(){
-            objLogout = setInterval(Logout, 300000);
-        }
-
-        function Logout(){
-              $("#lnkLogout")[0].click();
-        }
-        function ExtendTimeout(){
-            clearTimeout(objLogout);
-            $.get("/ExtendSession/Extend",
-            function(data) {
-                if (data === "True") {
-
-                }
-            });
-        }
-
-        function GetCookie(name) {
-            var match = document.cookie.match(new RegExp(name + '=([^;]+)'));
-            if (match)
-                return match[1];
-        }
-
-        $(window).on('load',
-            function() {
-                if (isOverlayed === "0") {
-                    $('#videoOverlayModal').modal('show');
-                    var videoSrcauto =
-                    "https://player.vimeo.com/video/237659363?modestbranding=1&loop=0&controls=0&showinfo=0&html5=1&autoplay=0";
-                    $('#videoOverlayModal iframe').attr('src', videoSrcauto);
-
-                    $('#videoOverlayModal button.close').click(function() {
-                        $.get("/Resource/RefreshOverlay",
-                            function(data) {
-                                if (data === "True") {
-                                    $('#videoOverlayModal iframe').attr('src', '');
-                                }
-                            });
-                    });
-                }
-            });
-
-        $('#videoOverlayModal').on('hidden.bs.modal', function (e) {
-            $('#videoOverlayModal').find('iframe').attr('src', '');
-        });
-
-    </script>
-
-    <!--Skip to content -->
-    <a href="#main" class="sr-only sr-only-focusable" id="skippy">
-        <div class="container"><span class="skiplink-text">Skip to main content</span></div>
-    </a>
-    <!-- MAIN CONTENT WRAPPER -->
-    <div id="mainContentWrapper" class="col-sm-12">
-        <div id="top-header"></div>
-        <!-- HEADER -->
-        
-<header role="banner" aria-label="Defaut Layout" class="l-header">
-    <!-- <a href="#main-content" class="c-skip-to sr-only">Skip to main content </a> -->
-    <!-- Below links caused modal to pop open -->
-    <!-- <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.5395/css/CoveoFullSearch.css"> -->
-    <!-- -------------------------------- Alert -------------------------------- -->
-    <!-- add alert.html -->
-    <div>
-    <div role="alert" aria-atomic="true" class="c-alert c-alert__active hide">
-        <div class="container c-alert__container">
-            <div class="c-alert__message">
-                <span class="c-alert__kicker">Alert</span>
-                <span>In observance of the U.S. Memorial Day holiday, AHA Customer Support will be closed on Monday, May 25. Normal business hours will resume on Tuesday. Please plan accordingly.</span>
-            </div>
-            <div class="c-alert__actions">
-                <button type="button" aria-label="Close" class="c-alert__close btn btn-dark">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-    <!-- ----------------------------- Header Top ------------------------------ -->
-    <!-- add header-top.html -->
-
-    
-<div class="l-header__top">
-    <div class="container container-fluid container-wide">
-            <div class="c-nav-dropdown__container visible-xs align-right margin-bottom-10">
-                <label for="ddlLanguage" class="sr-only">Choose language</label>
-                <select class="ddlLanguage form-control" id="ddlLanguage" onchange="fnChangeLanguage(this);"></select>
-            </div>
-        <nav role="navigation" aria-label="Top Navigation" class="c-top-nav js-mobile-nav-positioning">
-            <a href="https://cpr.heart.org:443/en" class="c-top-nav__logo">
-                <img src="images/cpr-and-ecc-site-logo.png" alt="American Heart Association CPR & ECC">
-            </a>
-            <ul class="c-top-nav__nav nav">
-                <li class="c-top-nav__item c-top-nav__button">
-                    <a href="https://atlas.heart.org" target="" class="c-top-nav__link c-cta c-cta--icon h-color--white">
-                        <span class="c-underline-link">
-                            Find a Class
-                        </span>
-                    </a>
-                </li>
-                <li class="c-top-nav__item">
-                    <a href="https://shopcpr.heart.org/" target="" class="c-top-nav__link c-cta c-cta--icon">
-                        <span class="c-underline-link">
-                            <img src="images/shopping-bag-icon.svg" alt="shopping bag icon">
-                            ShopCPR
-                        </span>
-                    </a>
-                </li>
-
-                <li class="c-top-nav__item  ">
-                    <div class="c-nav-dropdown__container">
-                        <button aria-haspopup="true" aria-expanded="false" class="c-top-nav__link c-cta c-cta--icon dropdown-toggle ">
-                            Get Involved
-                            <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                            </svg>
-                        </button>
-                        <div role="menu" class="c-nav-dropdown dropdown-menu" data-state="false">
-                            <ul class="c-nav-dropdown__list">
-                                <li class="c-nav-dropdown__item">
-                                    <a href="https://www2.heart.org/site/SPageNavigator/donatenow_heart.html?s_src=20U2W1UEMG&s_subsrc=cpr_nav_donate_link" disablewebedit="True" role="menuitem" class="c-nav-dropdown__link c-nav-dropdown__header  ">DONATE</a>
-                                </li>
-                                <li class="c-nav-dropdown__item">
-                                    <a href="https://www.heart.org/HEARTORG/volunteer/volunteerForm.jsp" disablewebedit="True" role="menuitem" class="c-nav-dropdown__link c-nav-dropdown__header  ">Volunteer</a>
-                                </li>
-                                <li class="c-nav-dropdown__item">
-                                    <a href="https://www.heart.org:443/en/get-involved/advocate" role="menuitem" class="c-nav-dropdown__link c-nav-dropdown__header  ">Advocacy</a>
-                                </li>
-                            </ul><span x-arrow="" class="c-nav-dropdown__arrow"></span>
-                        </div>
-                    </div>
-                </li>
-
-                    <li class="c-top-nav__item">
-                        <div class="c-nav-dropdown__container">
-                            <label for="selectLanguage" class="sr-only">Choose language</label>
-                            <select class="ddlLanguage form-control" id="selectLanguage" onchange="fnChangeLanguage(this);"></select>
-                        </div>
-                    </li>
-
-                <li class="c-top-nav__item  ">
-                    <div class="c-nav-dropdown__container">
-                    </div>
-                </li>
-
-                <!-- Coveo Search from Header plugin code -->
-
-                <li>
-                    <button class="btn c-top-nav__link btn btn-link-plain" data-toggle="modal" data-target="#coveomodal1">
-                        <img src="images/search.svg" alt="Search" width="24" height="24">
-                        <span class="sr-only">Search</span>
-                    </button>
-                    <div class="c-site-search-modal">
-                        <!-- add coveo-search-modal.html -->
-                        <div id="coveomodal1-outer">
-    <div id="coveomodal1" role="dialog" aria-hidden="true" tabindex="-1" class="modal fade" style="display: none; padding:0;">
-        <div class="modal-dialog">
-            <div tabindex="-1" role="document" aria-labelledby="coveomodal1___BV_modal_header_" class="modal-content">
-                <header id="coveomodal1___BV_modal_header_" class="modal-header">
-                    <div class="modal-title"></div>
-                    <button type="button" aria-label="Close" class="btn close" data-dismiss="modal">×</button>
-                </header>
-                <div id="coveomodal1-body" class="modal-body">
-                    <div class="global-search-section__search-text"> Search </div>
-                    <div class="global-search-section__coveo-block">
-                        <div>
-                            <div class="coveo-search-section">
-                                <div id="searchbox">
-                                    <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-query-suggest-addon="true" data-trigger-query-on-clear="false" data-placeholder="ex: Training"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                    </div>
-
-                </li>
-                <!-- End -->
-            </ul>
-        </nav>
-    </div>
-</div>
-    <!-- ----------------------------- Header Main ----------------------------- -->
-    <!-- add header-main.html -->
-
-    <!-- ----------------------- Header Utility - Mobile ----------------------- -->
-    <!-- add header-utility.html -->
-    <div class="l-header__utility">
-    <nav aria-label="Mobile Utility Navigation" class="container container-fluid">
-        <ul class="c-utility-nav nav">
-            <li>
-                <a href="https://atlas.heart.org" target="" class="c-cta c-cta--icon h-color--red">
-                    Find a Class
-                </a>
-            </li>
-            <li>
-                <a href="https://shopcpr.heart.org/" target="" class="c-cta c-cta--icon h-color--gray-dark">
-                    ShopCPR
-                </a>
-            </li>
-            <li>
-                <a href="https://www2.heart.org/site/SPageNavigator/donatenow_heart.html?s_src=20U2W1UEMG&s_subsrc=cpr_nav_donate_link" target="" class="c-cta c-cta--icon h-color--gray-dark">
-                    DONATE
-                </a>
-            </li>
-        </ul>
+<body>
+  <div class="topbar">
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='36'><rect width='160' height='36' fill='%23fff'/><text x='8' y='22' font-family='Arial' font-size='14' fill='%23c10e21'>AHA - eCards (clone)</text></svg>" alt="logo" class="logo">
+    <nav style="margin-left:auto">
+      <a href="#" style="text-decoration:none;color:#333;margin-right:10px">Find a Class</a>
+      <a href="#" style="text-decoration:none;color:#333">Shop</a>
     </nav>
-</div>
+  </div>
 
-</header>
-        <!-- END Header -->
-        <!-- Accessible Mega Menu -->
-        <!-- Navigation / / / / / / / / / / / / / / / / / / / / / / / / / / -->
-        <!--Making navigation keyboard accessible / / / / / / / / / / / / / -->
-        <!-- end megamenuWrapper -->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-        <!--eCard admin bar-->
+  <div class="container">
+    <div class="card">
+      <h2 class="heading">Hello, Sheena K V</h2>
+      <p class="text-md">Use the links below to view, share or edit this eCard. You may also select to view all of your eCards.</p>
 
-        <!-- Video Modal -->
-
-<div class="modal fade videoModalClass" data-backdrop="static" data-keyboard="false" id="videoOverlayModal" tabindex="-1" role="dialog" aria-label="Video Modal">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="h4 modal-title">
-
-                    <div><strong>Welcome to the new eCards!</strong></div>
-                    <div>
-                        <div style="float:left" class="text-md">
-
-                            View the overview video or download the�
-                        </div>
-                        <div style="float:left" class="text-md">
-                            <a aria-label="help" href="http://www.heart.org/idc/groups/ahaecc-public/wcm/ecc/documents/downloadable/ucm_496886.pdf" target="_blank">Step-by-Step Guide</a>
-                        </div>
-                        <div style="float:left" class="text-md">
-                            �to learn more about the updates we've made.
-                        </div>
-                    </div>
-
-
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">�</span></button>
+      <div class="grid">
+        <div class="col">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="text-md">eCard Code</div>
+              <div class="h5">245624204495</div>
             </div>
-            <div class="modal-body">
-
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe style="width:100%;height:500px;border:0;" title="frameVideo" src="" allowfullscreen=""></iframe>
-                </div>
+            <div style="text-align:right">
+              <div class="text-md">Status</div>
+              <div class="label">Active</div>
             </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="text-md">Course</div>
+            <div class="h5">Advanced Cardiovascular Life Support Course</div>
+            <div class="text-md">Instructor</div>
+            <div class="h5">Gokul P V</div>
+            <div class="text-md">Course Date</div>
+            <div class="h5">12/6/2023</div>
+          </div>
         </div>
-    </div>
-</div>
 
-
-
-        
-
-<div class="container" id="main">
-    <div class="spacer"></div>
-    <!-- MAIN CONTENT REGION  -->
-    <input data-val="true" data-val-number="The field CourseId must be a number." data-val-required="The CourseId field is required." id="hdnCourseId" name="StudentECard.CourseId" type="hidden" value="130">
-    <input id="hdnModuleIds" name="StudentECard.CourseModuleId" type="hidden" value="">
-    <input id="hdneCardUId" name="StudentECard.ECardUID" type="hidden" value="05E5E39C-6E67-48AB-BB16-01D0AE6D31DC">
-    <input data-val="true" data-val-number="The field StudentId must be a number." data-val-required="The StudentId field is required." id="hdnStudentId" name="StudentECard.StudentId" type="hidden" value="48882165">
-    <input data-val="true" data-val-required="The IsActiveCourse field is required." id="hdnIsActiveCourse" name="StudentECard.IsActiveCourse" type="hidden" value="True">
-    <input data-val="true" data-val-number="The field ClaimType must be a number." id="hdnClaimType" name="ClaimType" type="hidden" value="">
-
-
-<div id="divClaimedCard">
-    <h2 class="heading heading-line text-thin animated fadeIn"><span>Hello, Sheena K V</span></h2>
-
-    <p class="text-md">Use the links below to view, share or edit this eCard.  You may also select to view all of your eCards.</p>
-    <div class="spacer"></div>
-    <div id="claimedCardError" class="alert alert-danger  border-square hide" role="alert"></div>
-    <div class="alert alert-success hide" role="alert" id="divAlert">
-        <button type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">�</span>
-        </button>
-        <div class="alert-notification">
-            <span class="glyphicon glyphicon-bell animated flash circle-shadow-notification" aria-hidden="true"></span>
-            <p class="padding-10">An email with your security answer was sent to the email address associated with your account. 
-   </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="grid ecardsWrapper" data-isotope="{ " itemselector":="" ".grid-item",="" "layoutmode":="" "fitrows"="" }"="">
-            <!--CARD-->
-            <div class="grid-item active col-xs-12 col-sm-12 col-md-12">
-                <div class="thumbnail border-square">
-                    <div class="caption">
-                            <span class="label label-active">Active</span>
-
-                        <div class="coursetitle h3 margin-top-5">Advanced Cardiovascular Life Support Course</div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div>
-                                    <div class="text-gray-dark text-uppercase text-sm">eCard Code</div>
-                                    <div class="h5 margin-top-5">245624204495</div>
-                                </div>
-                                <div>
-                                    <div class="text-gray-dark text-uppercase text-sm">Name</div>
-                                    <div class="h5 margin-top-5">Sheena K V</div>
-                                </div>
-                                <input type="hidden" value="sheenaakalayakattil@gmail.com" id="email" data-stuid="48882165">
-                            </div>
-                            <div class="col-sm-6">
-                                    <div>
-                                        <div class="text-gray-dark text-uppercase text-sm">Training Center</div>
-                                        <div class="h5 margin-top-5">Indian Institute of Emergency Medical Services</div>
-                                    </div>
-                                        <div>
-                                            <div class="text-gray-dark text-uppercase text-sm">Training Site</div>
-                                            <div class="h5 margin-top-5">Indian Institute of Emergency Medical Services</div>
-                                        </div>
-                                    <div>
-                                        <div class="text-gray-dark text-uppercase text-sm">Instructor</div>
-                                        <div class="h5 margin-top-5">Gokul P v</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-gray-dark text-uppercase text-sm">Course Date</div>
-                                        <div class="h5 margin-top-5 crdate">12/6/2023</div>
-                                    </div>
-                                    <div>
-                                        <div class="text-gray-dark text-uppercase text-sm">Recommended Renewal Date</div>
-                                        <div class="h5 margin-top-5 renewdate">12/2025</div>
-                                    </div>
-                                
-
-                                        <div class="border-top-1 padding-top-10">
-                                            <div class="form-group">
-                                                <label class="control-label text-gray-dark text-uppercase" for="ddlTemplates">Select to view eCard:</label>
-                                                <select id="ddlTemplates" autocomplete="ecard-pdf" class="form-control">
-                                                        <option value="https://ecards.heart.org/api/relay/v1/ecard/getfullpdf?eCardUId=05E5E39C-6E67-48AB-BB16-01D0AE6D31DC&langId=2">Full Size eCard - English International Version</option>
-                                                            <option value="https://ecards.heart.org/api/relay/v1/ecard/getwalletpdf?eCardUId=05E5E39C-6E67-48AB-BB16-01D0AE6D31DC&langId=2">Wallet Size eCard - English International Version</option>
-                                                </select>
-                                            </div>
-                                            <button id="btnViewCard" class="btn btn-primary btn-sm" type="button" onclick="appStudentECard.printeCard(event)">View</button>
-
-                                        </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col">
+          <div style="padding:8px;border-left:1px solid #f0f0f0;height:100%">
+            <div class="text-md">Select to view eCard:</div>
+            <div class="form-group">
+              <select id="ddlTemplates" class="form-control" aria-label="Select eCard PDF">
+                <option value="https://ecards.heart.org/api/relay/v1/ecard/getfullpdf?eCardUId=05E5E39C-6E67-48AB-BB16-01D0AE6D31DC&langId=2">Full Size eCard - English International Version</option>
+                <option value="https://ecards.heart.org/api/relay/v1/ecard/getwalletpdf?eCardUId=05E5E39C-6E67-48AB-BB16-01D0AE6D31DC&langId=2">Wallet Size eCard - English International Version</option>
+              </select>
             </div>
+            <div style="margin-top:10px">
+              <button id="btnViewCard" class="btn btn-primary">View</button>
+              <button id="btnEmail" class="btn btn-secondary" style="margin-left:6px">Email eCard</button>
+            </div>
+            <div style="margin-top:14px;color:#777;font-size:13px">Recommended Renewal Date: <strong>12/2025</strong></div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<div id="divMyCards" class="hide"></div>
-<div id="divEditEcard" class="hide"></div>
-<div id="divEditStduentQA" class="hide"></div>
+    <footer>
+      © <span id="year"></span> American Heart Association — clone page created from uploaded file. :contentReference[oaicite:1]{index=1}
+    </footer>
+  </div>
 
+  <!-- Simple modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document" aria-label="eCard preview">
+      <button class="close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <h3>eCard Preview</h3>
+      <div style="margin-bottom:12px;color:#555">Preview of selected PDF (opens in new tab as fallback)</div>
+      <div id="iframeWrap" style="min-height:300px">
+        <!-- iframe will be injected here where supported -->
+      </div>
+      <div style="margin-top:12px;text-align:right">
+        <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
 
-    <div class="spacer"></div>
-    <!-- END MAIN CONTENT REGION  -->
-    <div class="spacer"></div>
-</div>
-<script type="text/javascript">
-    if (history.pushState) {
-        history.pushState(null, null, location.href);
+  <script>
+    // UI behavior
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openModalWithUrl(url){
+      // if the browser blocks embedding PDFs, open in new tab as fallback
+      var wrap = document.getElementById('iframeWrap');
+      wrap.innerHTML = '';
+      try {
+        var ifr = document.createElement('iframe');
+        ifr.style.width = '100%';
+        ifr.style.height = '520px';
+        ifr.style.border = '0';
+        ifr.src = url;
+        wrap.appendChild(ifr);
+        document.getElementById('modalBackdrop').style.display = 'flex';
+      } catch(e){
+        window.open(url, '_blank');
+      }
     }
-    window.onpopstate = function () {
-        history.go(1);
-    };
-</script>
+    function closeModal(){
+      document.getElementById('modalBackdrop').style.display = 'none';
+      document.getElementById('iframeWrap').innerHTML = '';
+    }
 
-        <!-- Modal -->
-        <!--Lookup Modal-->
-        <div class="modal fade in modal-scrollable" data-backdrop="static" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">�</span><span class="sr-only">Close</span></button>
-                        <h3 class="modal-title" id="myModalLabel">Email eCard</h3>
-                    </div><!-- end modal-header -->
-                    <!-- Form -->
-                    <div class="modal-body">
-                        <form id="emailForm">
-                            <div id="emailError" class="alert alert-danger  border-square hide" role="alert"> Error!</div>
-                            <div class="">
-                                <label class="control-label text-uppercase" for="userEmail">Email Address<span class="required"> *</span></label>
-                                <input class="form-control" type="text" id="userEmail" placeholder="Enter email address">
-                            </div>
-                            <div class="spacer"></div>
-                            <a class="btn btn-secondary" aria-label="cancel" id="btnCancel" href="" data-dismiss="modal">Cancel</a>
-                            <input class="btn btn-primary" name="send" type="submit" id="btnEmailECard" value="Email">
-                        </form>
+    document.getElementById('btnViewCard').addEventListener('click', function(){
+      var sel = document.getElementById('ddlTemplates');
+      var url = sel.value;
+      // try to open in modal; else open new tab
+      openModalWithUrl(url);
+    });
 
-                    </div>
-                </div>
-                <!-- End ID trainingCentersLookupWrapper -->
-            </div>
-        </div>
-        <!-- End Lookup -->
-        <!-- End Modal -->
-        <!-- Modal -->
-        <div class="modal fade" id="loaderModal" role="dialog" data-backdrop="static">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="h5">In progress, please wait...</div>
-                        <div class="progress" style="margin-bottom: 0">
-                            <div class="progress-bar progress-bar-striped progress-bar-danger active" role="progressbar" style="width: 100%">
-                            </div><!-- end .progress-bar -->
-                        </div> <!-- end .progress -->
-                    </div><!-- end .modal-body -->
-                </div><!-- end .modal-content -->
-
-            </div>
-        </div>
-
-        <div class="modal fade" id="timeOutModal" role="dialog" aria-labelledby="timeOutHeader" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">�</span></button>
-                            <div class="h4 modal-title text-uppercase" id="timeOutHeader">Timeout</div>
-                        </div>
-                        <div class="modal-body">
-                            <!--modal content-->
-                            <div class="form-group">
-                                <p>Your session will time out in 5 minutes. Click OK to continue with the session or click Cancel to log out.</p>
-                            </div>
-                        </div>
-                        <div class="modal-footer text-center">
-                            <button type="submit" onclick="ExtendTimeout()" class="btn btn-primary btn-sm" data-dismiss="modal">Ok</button>
-                            <a id="lnkLogout" href="/Account/SignOut" class="btn btn-secondary btn-sm">Cancel</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- end .modal -->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-        <!--Footer-->
-        <footer role="contentinfo" class="l-footer">
-    <div class="c-inquiries-support">
-        <div class="container container-fluid">
-            <div class="row justify-content-md-center">
-                <div class="c-inquiries-support__container col-md-9">
-                    <div class="c-inquiries-support__content">
-                        <strong>Atlas U.S Based Customer Support :</strong><br>
-                        1-877-AHA-4CPR (1-877-242-4277)<br>
-                        <a class="text-underline" href="mailto:atlas.support@heart.org" target="_top">atlas.support@heart.org</a><br>
-                        <em>
-                            Available 8 a.m. - 5 p.m. Central Time <br>
-                            Monday - Friday
-                        </em>
-                    </div>
-                    <div class="c-inquiries-support__actions">
-                        <div class="c-inquiries-support__cta">
-                            <a href="   / " title="International Inquiries" class="c-cta h-theme--black">International Inquiries</a>
-                        </div>
-                        <div class="c-inquiries-support__cta">
-                            <a href="mailto:globalwebsupport@heart.org" title="Global Web Support (email)" class="c-cta h-theme--black">Global Web Support (email)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container container-fluid">
-        <div class="l-generic row">
-            <div class="l-generic__col col-md-12"></div>
-        </div>
-    </div>
-    <div class="l-footer__section">
-        <div class="container container-fluid">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 l-footer__nav">
-                    <div class="l-footer__logo">
-                        <img src="images/aha_full.svg" alt="American Heart Association - Full Logo" width="426" height="256" disablewebedit="False">
-                    </div>
-                    <button class="btn btn-link-plain btn--select collapsed" aria-controls="contact-collapse-footer" aria-expanded="false">
-                        <span class="h6">Contact Us</span>
-                        <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                            <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                        </svg>
-                    </button>
-                    <div id="contact-collapse-footer" class="collapse" style="display: none;">
-                        <p>
-                            <strong>National Center</strong><br>
-                            7272 Greenville Ave.<br>
-                            Dallas, TX 75231<br>
-                            <br>
-                            <strong>Customer Service</strong><br>
-                            1-800-AHA-USA-1<br>
-                            1-800-242-8721<br>
-                            <br>
-                            <a href="/en/about-us/contact-us" style="font-size: 13.5px; text-transform: none;text-decoration: none " class="c-cta btn btn-md btn-light btn-round h-theme--red w-75">Contact Us</a><br>
-                            </p>
-                        <p>
-                            <strong>Hours</strong><br>
-                            Monday - Friday: 7AM - 7PM CST�<br>
-                            Saturday: 9AM - 5PM CST<br>
-                            Closed on Sundays
-                        </p>
-                        <p>
-                          <strong>Tax Identification Number<br></strong>13-5613797
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 l-footer__nav">
-                    <h2 class="h6 l-footer__nav-title">About Us</h2>
-                    <button class="btn btn-link-plain btn--select collapsed" aria-controls="footer_collapse_04ef16ed-b127-4155-aa5f-f0f693dce5d9" aria-expanded="false">
-                        <span class="h6">About Us</span>
-                        <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                            <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                        </svg>
-                    </button>
-                    <div id="footer_collapse_04ef16ed-b127-4155-aa5f-f0f693dce5d9" class="collapse" style="display: none;">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="https://www.heart.org:443/en/about-us" title="About the AHA/ASA" disablewebedit="True" class="c-cta--arrow">
-                                    About the AHA/ASA
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.heart.org/en/about-us/2021-2022-annual-report" title="Annual Report" disablewebedit="True" class="c-cta--arrow">
-                                    Annual Report
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/en/about-us/aha-financial-information" title="AHA Financial Information" disablewebedit="True" class="c-cta--arrow">
-                                    AHA Financial Information
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/en/about-us/international-programs" title="International Programs" disablewebedit="True" class="c-cta--arrow">
-                                    International Programs
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.heart.org:443/en/news" title="Latest Heart and Stroke News" disablewebedit="True" class="c-cta--arrow">
-                                    Latest Heart and Stroke News
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://newsroom.heart.org/" title="AHA/ASA Media Newsroom" disablewebedit="True" class="c-cta--arrow">
-                                    AHA/ASA Media Newsroom
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://heart.jobs/?utm_campaign=heart.org-Footer&vs=2896&utm_medium=Other&utm_source=heart.org-Footer" title="Careers" disablewebedit="True" class="c-cta--arrow">
-                                    Careers
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 l-footer__nav">
-                    <h2 class="h6 l-footer__nav-title">
-                        Get Involved
-
-                    </h2>
-                    <button class="btn btn-link-plain btn--select collapsed" aria-controls="footer_collapse_9bc1990f-d882-4584-8657-2ea593017d70" aria-expanded="false">
-                        <span class="h6">Get Involved</span>
-                        <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                            <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                        </svg>
-                    </button>
-                    <div id="footer_collapse_9bc1990f-d882-4584-8657-2ea593017d70" class="collapse" style="display: none;">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="https://heart.donorsupport.co/-/XEDQWRZF" title="Donate Now" disablewebedit="True" class="c-cta--arrow">
-                                    Donate Now
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www2.heart.org/site/SPageNavigator/donatenow_legacy.html?s_src=20U2W1EEMM&sub_src=footer_memorial_gift" title="Make a Memorial Gift" disablewebedit="True" class="c-cta--arrow">
-                                    Make a Memorial Gift
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.heart.org:443/en/get-involved/ways-to-give" title="Ways to Give" disablewebedit="True" class="c-cta--arrow">
-                                    Ways to Give
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.heart.org:443/en/get-involved/advocate" title="Advocate" disablewebedit="True" class="c-cta--arrow">
-                                    Advocate
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.heart.org/HEARTORG/volunteer/volunteerForm.jsp" title="Volunteer" disablewebedit="True" class="c-cta--arrow">
-                                    Volunteer
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.goredforwomen.org:443/en" title="Go Red For Women" disablewebedit="True" class="c-cta--arrow">
-                                    Go Red For Women
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://static.heart.org/ahaanywhere/sitecore/dist/index.html#/:~:text=Red%20For%20Women-,ShopHeart,-ShopCPR" title="SHOP" disablewebedit="True" class=" c-cta--arrow ">
-                                    ShopHeart
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://shopcpr.heart.org/" title="SHOP" disablewebedit="True" class=" c-cta--arrow ">
-                                    ShopCPR
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 l-footer__nav">
-                    <h2 class="h6 l-footer__nav-title">Our Sites</h2>
-                    <button class="btn btn-link-plain btn--select collapsed" aria-controls="footer_collapse_59a1c941-215f-4a5e-aebc-dc144c70d6b0" aria-expanded="false">
-                        <span class="h6">Our Sites</span>
-                        <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                            <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                        </svg>
-                    </button>
-                    <div id="footer_collapse_59a1c941-215f-4a5e-aebc-dc144c70d6b0" class="collapse" style="display: none;">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="https://www.stroke.org:443/en" title="American Stroke Association" disablewebedit="True" class="c-cta--arrow">
-                                    American Stroke Association
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://cpr.heart.org:443/en" title="CPR & ECC" disablewebedit="True" class="c-cta--arrow">
-                                    CPR & ECC
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://professional.heart.org/professional/index.jsp" title="Professional Heart Daily" disablewebedit="True" class="c-cta--arrow">
-                                    Professional Heart Daily
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://cpr.heart.org/en/about-us/aha-asa-website-directory" title="More Sites" disablewebedit="True" class="c-cta--arrow">
-                                    More Sites
-                                    <svg class="icon-down-arrow" viewBox="0 0 32 32">
-                                        <path d="M16 25.846c-0.574 0-1.147-0.237-1.586-0.711l-13.755-14.846c-0.879-0.948-0.879-2.477 0-3.424 0.879-0.948 2.295-0.948 3.166 0l12.175 13.141 12.175-13.141c0.879-0.948 2.295-0.948 3.166 0 0.879 0.948 0.879 2.477 0 3.424l-13.755 14.846c-0.439 0.474-1.012 0.711-1.586 0.711h-0z"></path>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="l-footer__section">
-        <div class="container container-fluid l-footer__social">
-            <ul class="nav l-icon-nav">
-                <li>
-                    <a href="https://www.twitter.com/American_Heart" disablewebedit="True">
-                        <img src="images/twitter-gray.svg" alt="Twitter" disablewebedit="True">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/AmericanHeart" disablewebedit="True">
-                        <img src="images/facebook-gray.svg" alt="Facebook" disablewebedit="True">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/american_heart" title="American Heart Association Instagram" disablewebedit="True">
-                        <img src="images/instagram-gray.svg" alt="Instagram" disablewebedit="True">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/user/americanheartassoc" title="American Heart Association YouTube" disablewebedit="True">
-                        <img src="images/youtube-gray.svg" alt="YouTube" disablewebedit="True">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.pinterest.com/americanheart/" title="American Heart Association Pinterest" disablewebedit="True">
-                        <img src="images/pinterest-gray.svg" alt="Pinterest" disablewebedit="True">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/company/american-heart-association" title="American Heart Association Linked In" disablewebedit="True">
-                        <img src="images/linkedin-gray.svg" alt="Linkedin" disablewebedit="True">
-                    </a>
-                </li>
-            </ul>
-            <div class="l-footer__logos">
-                <ul class="nav l-icon-nav">
-                    <li>
-                        <a href="https://nationalhealthcouncil.org/standards-of-excellence/" title="National Health Council Standards of Excellence Certification Program" disablewebedit="True" class="twoClick" data-toggle="modal" data-target="#speed-bump">
-                            <img src="images/nhc_optimized.png" alt="National Health Council" width="49" height="50" disablewebedit="True">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.give.org/charity-reviews/national/health/american-heart-association-in-dallas-tx-173" title="Better Business Bureau Accredited Charity" disablewebedit="True" class="twoClick" data-toggle="modal" data-target="#speed-bump">
-                            <img src="images/bbb_100px.png" alt="Better Business Bureau" width="31" height="50" disablewebedit="True">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=3260" title="Charity Navigator" disablewebedit="True" class="twoClick" data-toggle="modal" data-target="#speed-bump">
-                            <img src="images/charity-navigator.png" alt="Charity Navigator" width="100" height="50" disablewebedit="True">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://ssl.comodo.com/" title="Comodo Secure" disablewebedit="True" class="twoClick" data-toggle="modal" data-target="#speed-bump">
-                            <img src="images/comodosslsecureseal.png" alt="Comodo Secure" width="76" height="50" disablewebedit="True">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="l-footer__section">
-        <div class="container container-fluid">
-            <ul class="nav l-divider-link-nav l-footer__supplemental-nav">
-                <li>
-                    <a href="https://heart.jobs/?utm_campaign=heart.org-Footer&vs=2896&utm_medium=Other&utm_source=heart.org-Footer" title="Careers" disablewebedit="True">AHA Careers</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement" title="Privacy Policy" disablewebedit="True">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/medical-advice" title="Medical Advice Disclaimer" disablewebedit="True">Medical Advice Disclaimer</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/copyright" title="Copyright Policy" disablewebedit="True">Copyright Policy</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/accessibility-statement" title="Accessibility Statement" disablewebedit="True">Accessibility Statement</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/ethics-policy" title="Ethics Policy" disablewebedit="True">Ethics Policy</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/conflict-of-interest-policy" title="Conflict of Interest Policy" disablewebedit="True">Conflict of Interest Policy</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/linking-policy" title="Linking Policy" disablewebedit="True">Linking Policy</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/editorial-guidelines" title="Content Editorial Guidelines" disablewebedit="True" class="  ">
-                        Content Editorial Guidelines
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/diversity-inclusion" title="Diversity" disablewebedit="True">Diversity</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/procurement-services/procurement-services-department" title="Suppliers & Providers" disablewebedit="True" class="  ">Suppliers & Providers</a>
-                </li>
-                <li>
-                    <a href="https://www.heart.org/en/about-us/statements-and-policies/state-fundraising-notices" title="State Fundraising Notices" disablewebedit="True">State Fundraising Notices</a>
-                </li>
-                <li>
-                    <a id="ot-sdk-btn" class="ot-sdk-show-settings ot-sdk-settings-link">Cookie Settings</a>
-                </li>
-            </ul>
-            <div class="l-footer__copyright">
-                <p class="h-color--black">
-                    �<script type="text/javascript">document.write(new Date().getFullYear())</script> American Heart Association, Inc. All rights reserved.
-                    Unauthorized use prohibited.<br>
-                    The American Heart Association is a qualified 501(c)(3) tax-exempt
-                    organization. <br>
-                    *Red Dress " DHHS, Go Red " AHA ; National Wear Red Day� is a
-                    registered trademark.
-                </p>
-            </div>
-            <div class="l-footer__compliance">
-                <img alt="Health on the Net certified 2019" src="images/honconduct517595_s.gif" style="height: 72px; width: 49px;">
-                <div class="l-footer__compliance-text">
-                    <p>
-                        This site complies with the <a href="http://www.healthonnet.org/HONcode/Conduct.html" class="twoClick">HONcode Standard</a> for trustworthy health information:
-                        <a href="https://www.healthonnet.org/HONcode/Conduct.html?HONConduct517595" class="twoClick">verify here.</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- add twoclick-modal.html -->
-    <div id="speed-bump" role="dialog" tabindex="-1" class="modal fade">
-    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div id="speed-bump-modal___BV_modal_header__kcc8nxo2" class="modal-header">
-                <h2 class="sr-only">Speed Bump</h2>
-            </div>
-            <div id="speed-bump-modal___BV_modal_body__kcc8nxo2" class="modal-body">
-                <button type="button" aria-label="Close" class="close" data-dismiss="modal">Ã—</button>
-                <div class="c-speed-bump__media">
-                    <img src="images/ahalogo.png" alt="American Heart Association logo">
-                </div>
-                <p>
-                    The link provided below is for convenience only, and is not an endorsement of either the linked-to entity or any product or service.
-                </p>
-                <p>
-                    <span class="c-speed-bump__link">http://www.healthonnet.org/HONcode/Conduct.html</span>
-                </p>
-                <a target="_blank" class="btn btn-danger btn-round" href="http://www.healthonnet.org/HONcode/Conduct.html">Proceed</a>
-            </div>
-            <!---->
-        </div>
-    </div>
-</div>
-</footer>
-
-
-        <!--End of Footer-->
-        <!-- Analytics script -->
-        <script src="js/ga-custom.js"></script>
-
-        <!-- End of Analytics script -->
-
-    </div>
-    <!-- END MAIN CONTENT WRAPPER -->
-    <script>window.jQuery || document.write("<script src='//static.heart.org/" + env + "/ecards/js/vendor/jquery-1.11.2.js'><\/script>")</script>
-
-    <script src="js/isotope.pkgd.js"></script>
-
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/plugins.js"></script>
-
-    <script src="js/main.js"></script>
-
-    <script src="js/jquery-ui-datepicker.js"></script>
-
-    <script src="js/jquery-datepicker-extension-accessible.js"></script>
-
-    <script src="js/bootstrap-multiselect.js"></script>
-
-    <script src="js/FileSaver.min.js"></script>
-
-    <script src="js/script.js"></script>
-
-<script>
-    currentController = currentController.toLowerCase();
-
-    switch (true) {
-            case currentController=="assignecards":
-                var assignViewModel = {"EntityId":0,"CourseId":0,"CourseName":null,"TCNumber":null,"TCId":0,"TCName":null,"TCIdNumber":null,"DistributorId":0,"DistributorName":null,"AvailableQuantity":0,"AssignedQuantity":0,"Courses":[],"Distributors":[],"ErrorMessage":null,"Lookup":null};
-                var appECardRequests = new AppEcardRequest();
-                appECardRequests.init();
-                break;
-            case currentController==="ecardstatus":
-                var eCardStatusViewModel = {"CourseId":null,"Ids":[],"VAMCourseIds":[],"CourseName":null,"TrainingCenterId":null,"TransactionType":null,"TCName":null,"Courses":[],"TrainingCenters":[],"LocationId":null,"TrainingSiteId":null,"InstructorId":null,"DistributorId":null,"StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","ErrorMessage":null,"Profiles":null,"ProfileId":0,"TransactionBy":null,"VAMCourseId":null,"IsPrintOnly":false};
-                if (area.toLowerCase() === "distributor") {
-                    var appDisteCardStatus = new AppDisteCardStatus();
-                    appDisteCardStatus.init();
-                } else if (area.toLowerCase() === "admin") {
-                    var assignViewModel = {"EntityId":0,"CourseId":0,"CourseName":null,"TCNumber":null,"TCId":0,"TCName":null,"TCIdNumber":null,"DistributorId":0,"DistributorName":null,"AvailableQuantity":0,"AssignedQuantity":0,"Courses":[],"Distributors":[],"ErrorMessage":null,"Lookup":null};
-                    var appECardRequests = new AppEcardRequest();
-                    appECardRequests.initMultiSelect();
-                    appECardRequests.init();
-                }
-                else {
-                    var searchCardModel = {"CourseIds":null,"CourseName":null,"CourseDate":"\/Date(-62135575200000)\/","StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","FirstName":null,"LastName":null,"Email":null,"Phone":null,"ZipCode":null,"ECardCode":null,"ECardUId":null,"EStatus":0,"Notes":null,"LocationId":0,"LocationName":null,"InstructorId":0,"InstructorIdNum":null,"TCId":0,"TCIdNumber":null,"TCName":null,"IsInstructorCard":false,"InstructorStudentId":null,"CourseType":0,"IsAdmin":false,"IsECardAdmin":false,"IsNECAdmin":false,"IsTCCTCA":false,"IsReadOnlyRole":false,"IsInstructor":false,"ModuleIds":null,"HasModules":false,"TrainingSiteName":null,"TSId":0,"IsSuperUser":false,"LMSName":null,"Courses":[],"Instructors":[],"ECardStatuses":[],"CourseModules":null,"SubCourses":null,"Profiles":null,"ProfileId":0,"TrainingCenters":[],"HasIntlAlignment":false,"SelectRoleId":0,"SubCourse":null,"SubCourseId":null,"IssueDate":"\/Date(-62135575200000)\/","AssignedBy":null,"AssignedRole":null,"ProductNumber":null};
-                    if (area.toLowerCase() === "ecardadmin") {
-                        var appLocationECardStatus = new AppLocationEcardStatus();
-                        var appeCardAction = new AppECardAction(appLocationECardStatus);
-                        appLocationECardStatus.init();
-                    } else if(area.toLowerCase() === "trainingcenter") {
-                        var appECardStatus = new AppEcardStatus();
-                        var appeCardAction = new AppECardAction(appECardStatus);
-                        appECardStatus.init();
-                    }
-                    else if (area.toLowerCase() === "instructor") {
-                        var appInstructorECardStatus = new AppInstructorEcardStatus();
-                        var appeCardAction = new AppECardAction(appInstructorECardStatus);
-                        appInstructorECardStatus.init();
-                    }
-                }
-
-                break;
-            case currentController=="upload":
-                var appECardUpload = new AppEcardUpload();
-                break;
-            case currentController=="ecardlocationassignment":
-            case currentController=="instructorassignment":
-                var appTCAssignment = new AppTC();
-                appTCAssignment.init();
-                break;
-            case currentController=="reclaim":
-                var appTCReclaim = new AppReclaim();
-                appTCReclaim.init();
-                break;
-            case currentController=="inventory":
-                var appInventory= new AppInventory();
-                appInventory.init();
-                break;
-            case currentController=="studentassignment":
-                var studentAssignmentViewModel = {"CourseId":null,"ProductNumber":null,"SubCourseId":null,"ParentCourseId":null,"CourseName":null,"SubCourseName":null,"TCId":0,"TCName":null,"LocationId":null,"LocationName":null,"TrainingSiteId":null,"TrainingSiteName":null,"InstructorId":0,"InstructorName":null,"Quantity":null,"IsConfirmed":false,"AvailableQty":0,"AssignedQty":null,"Courses":[],"CourseModule":[],"SubCourses":[],"StudentList":[],"InventoryPool":[],"InstructorList":[],"UserId":0,"AssignedFrom":0,"FromRoleId":0,"SelectedInventoryPool":null,"HasModule":0,"IsUpload":false,"HelpVideoId":0,"InventorySource":null,"CourseLocation":null,"HasSubCourse":0,"RoleId":null,"UserRoles":null,"HSProductNumber":null,"ModBasic":null,"ModTotal":null};
-                var appStudentAssignment= new AppStudentAssignment();
-                appStudentAssignment.init();
-
-                break;
-            case currentController == "feedback":
-            case currentController=="ecards":
-                var claimModel = {"CourseId":0,"StudentECard":{"ECardId":0,"CertificateId":null,"StudentId":0,"ECardUID":null,"Status":0,"FirstName":null,"LastName":null,"StudentFullName":null,"SsoId":null,"Email":null,"Phone":null,"NormalizedPhone":null,"ZipCode":null,"InstructorName":null,"InstructorId":null,"InstructorProfileId":0,"InstructorStudentId":null,"HasInstructorStudentId":false,"IsInstructorSource":false,"ECardLocationId":0,"ECardLocationName":null,"EcardLocationIdNumber":null,"TrainingSiteName":null,"CourseId":0,"IsActiveCourse":false,"CourseName":null,"ATGCourseId":null,"CourseDate":null,"ClaimedDate":null,"IssuedDate":"\/Date(-62135575200000)\/","ExpiryDate":"\/Date(-62135575200000)\/","BlockedDate":null,"ProductNumber":null,"IsExpired":true,"CourseModules":null,"TrainingCenter":null,"CourseModuleId":null,"CourseModuleName":null,"FullPDFName":null,"WalletPDFName":null,"LanguageId":0,"IsInternational":false,"TempStudentId":0,"EcardStatus":0,"RenewalDue":0,"Notes":null,"ModifiedBy":0,"TransactionId":0,"HasCourseModules":false,"HasSecurityQA":false,"SecurityQuestion":null,"IsECCOptIn":false,"IsAHAOptIn":false,"CourseType":0,"LastActivityDate":"\/Date(-62135575200000)\/","SMSOptIn":false,"IsAllowToReserve":null,"IsProfileUpdatePending":false,"HasSurvey":false,"IsPrintOnlyTC":false,"IsActiveSurvey":false,"PdfTemplates":[],"PrintOnlyPDF":null,"CourseLocation":null,"TSId":null,"Language":null,"FacultyInstructorName":null,"FacultyInstructorId":null,"TSCode":null,"LMSName":null,"SubCourseId":null,"SubCourse":null,"AssignedBy":null,"AssignedRole":null},"SecurityQuestions":[],"SurveyQuestions":[],"StudentLog":{"IpAddress":null,"OperatingSystem":null,"Browser":null,"TimeZone":null,"IsTermsAccepted":false},"ClaimType":null,"isFirstTime":null,"CourseLanguages":[]};
-                var appStudentECard = new AppStudentECard();
-                appStudentECard.init();
-                break;
-            case  currentController=="emailedecards":
-                var emailedEcards = {"CourseId":null,"CourseName":null,"TrainingCenterId":null,"TransactionType":null,"TCName":null,"Courses":[],"TrainingCenters":[],"LocationId":null,"InstructorId":null,"StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","ErrorMessage":null,"RoleName":null,"SelectedInventoryPool":null,"SelectRoleId":0,"TSId":null,"InventoryPool":[]};
-                var appEmailedEcards = new AppEmailedEcards();
-                appEmailedEcards.init();
-                break;
-            case currentController=="myecards":
-                var appStudentECard = new AppStudentECard();
-                break;
-            case currentController === "searchecards":
-                var searchCardModel = {"CourseIds":null,"CourseName":null,"CourseDate":"\/Date(-62135575200000)\/","StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","FirstName":null,"LastName":null,"Email":null,"Phone":null,"ZipCode":null,"ECardCode":null,"ECardUId":null,"EStatus":0,"Notes":null,"LocationId":0,"LocationName":null,"InstructorId":0,"InstructorIdNum":null,"TCId":0,"TCIdNumber":null,"TCName":null,"IsInstructorCard":false,"InstructorStudentId":null,"CourseType":0,"IsAdmin":false,"IsECardAdmin":false,"IsNECAdmin":false,"IsTCCTCA":false,"IsReadOnlyRole":false,"IsInstructor":false,"ModuleIds":null,"HasModules":false,"TrainingSiteName":null,"TSId":0,"IsSuperUser":false,"LMSName":null,"Courses":[],"Instructors":[],"ECardStatuses":[],"CourseModules":null,"SubCourses":null,"Profiles":null,"ProfileId":0,"TrainingCenters":[],"HasIntlAlignment":false,"SelectRoleId":0,"SubCourse":null,"SubCourseId":null,"IssueDate":"\/Date(-62135575200000)\/","AssignedBy":null,"AssignedRole":null,"ProductNumber":null};
-                var appSearchECards = new AppSearchECards();
-                appSearchECards.init();
-                break;
-            case currentController === "searchallecards":
-                var searchCardModel = {"CourseIds":null,"CourseName":null,"CourseDate":"\/Date(-62135575200000)\/","StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","FirstName":null,"LastName":null,"Email":null,"Phone":null,"ZipCode":null,"ECardCode":null,"ECardUId":null,"EStatus":0,"Notes":null,"LocationId":0,"LocationName":null,"InstructorId":0,"InstructorIdNum":null,"TCId":0,"TCIdNumber":null,"TCName":null,"IsInstructorCard":false,"InstructorStudentId":null,"CourseType":0,"IsAdmin":false,"IsECardAdmin":false,"IsNECAdmin":false,"IsTCCTCA":false,"IsReadOnlyRole":false,"IsInstructor":false,"ModuleIds":null,"HasModules":false,"TrainingSiteName":null,"TSId":0,"IsSuperUser":false,"LMSName":null,"Courses":[],"Instructors":[],"ECardStatuses":[],"CourseModules":null,"SubCourses":null,"Profiles":null,"ProfileId":0,"TrainingCenters":[],"HasIntlAlignment":false,"SelectRoleId":0,"SubCourse":null,"SubCourseId":null,"IssueDate":"\/Date(-62135575200000)\/","AssignedBy":null,"AssignedRole":null,"ProductNumber":null};
-                var appSearchECards = new AppSearchAllECards();
-                appSearchECards.init();
-                break;
-            case currentController==="expiringecards":
-                var appExpiringEcards = new AppExpiringEcards();
-                appExpiringEcards.init();
-                break;
-            case currentController==="vendor":
-                var vendorModel = {"Vendor":null,"SelectedAPIs":null,"ExternalApi":[]};
-                var appVendor = new AppVendor();
-                appVendor.init();
-                break;
-            case currentController==="ecardclosurereport":
-                var appEcardClosureReport = new AppEcardClosureReport();
-                appEcardClosureReport.init();
-                break;
-            case currentController==="reports":
-                var appReports = new AppReports();
-                appReports.init();
-                break;
-            case currentController==="tcscorereport":
-                var appScoreReports = new AppScoreReports();
-                appScoreReports.init();
-                break;
-            case currentController === "itcscorereport":
-                var appIntltcScoreReports = new AppIntlTCScoreReports();
-                appIntltcScoreReports.init();
-                break;
-            case currentController==="studenteditecardreport":
-                var appEditEcardReports = new AppEditEcardReports();
-                appEditEcardReports.init();
-                break;
-
-            case (currentController==="locationscorereport" ):
-                var appLocationScoreReports = new AppLocationScoreReports();
-                appLocationScoreReports.init();
-                break;
-            case (currentController === "tsscorereport"):
-                var appSiteScoreReports = new AppSiteScoreReports();
-                appSiteScoreReports.init();
-                break;
-
-            case  currentController==="individualinstructorscoresreport":
-                var appIndividualInstructorScoreReports = new AppIndividualInstructorScoreReports();
-                appIndividualInstructorScoreReports.init();
-                break;
-            case currentController === "intlindividualinstructorscoresreport":
-                var appIntlIndividualInstructorScoreReports = new AppIntlIndividualInstructorScoreReports();
-                appIntlIndividualInstructorScoreReports.init();
-                break;
-
-            case  currentController==="instructorscoresreport":
-                var appInstructorScoreReports = new AppInstructorScoreReports();
-                appInstructorScoreReports.init();
-                break;
-            case currentController === "intlinstructorscoresreport":
-                var appIntlInstructorScoreReports = new AppIntlInstructorScoreReports();
-                appIntlInstructorScoreReports.init();
-                break;
-
-            case  currentController==="surveyquestionreport" || currentController==="instructorsurveyquestionreport":
-                var appSurveyQuestionReport = new AppSurveyQuestionReport();
-                appSurveyQuestionReport.init();
-                break;
-            case currentController === "intlsurveyquestionreport" || currentController === "intlinstructorsurveyquestionreport":
-                var appIntlSurveyQuestionReport = new AppIntlSurveyQuestionReport();
-                appIntlSurveyQuestionReport.init();
-                break;
-            case currentController==="reclaimreport":
-                var appReclaimReport = new AppReclaimReport();
-                appReclaimReport.init();
-                break;
-            case currentController==="ecardreport":
-                var appeCardReport = new AppeCardReport();
-                appeCardReport.init();
-                break;
-            case currentController==="optinreport":
-                var appOptInReport = new AppOptInReport();
-                appOptInReport.init();
-                break;
-            case currentController==="usersearch" ||  currentController==="tcsearch":
-                var searchUserModel = {"ProfileId":0,"SsoId":null,"AtgId":null,"InstructorId":null,"Email":null,"FirstName":null,"LastName":null,"RoleIds":null,"IsActive":false,"IsDataVerified":false,"Comments":null};
-                var appSearchUser = new AppSearchUser();
-                appSearchUser.init();
-                break;
-            case currentController ==="anonymizestudent":
-                var searchStudentModel = {"Email":null,"FirstName":null,"LastName":null,"ReasonCode":0,"Reason":null,"AnonymizeActiveECads":false,"StudentId":0};
-                var appSearchStudent = new AppSearchStudent();
-                appSearchStudent.init();
-                break;
-            case currentController==="apigateway":
-                var apiKeyModel = {"Id":0,"ProfileId":0,"PrivateKey":null,"CreatedDate":"\/Date(-62135575200000)\/","CreatedBy":0,"ModifiedDate":null,"ModifiedBy":null};
-                var apiKeyManager = new AppApiKeyManager();
-                apiKeyManager.init();
-                break;
-            case currentController==="changeapprovals":
-                var appApproveECards = new AppApproveECards();
-                appApproveECards.init();
-                break;
-            case currentController === "assigninstructorcandidate":
-                var studentAssignmentViewModel = {"CourseId":null,"ProductNumber":null,"SubCourseId":null,"ParentCourseId":null,"CourseName":null,"SubCourseName":null,"TCId":0,"TCName":null,"LocationId":null,"LocationName":null,"TrainingSiteId":null,"TrainingSiteName":null,"InstructorId":0,"InstructorName":null,"Quantity":null,"IsConfirmed":false,"AvailableQty":0,"AssignedQty":null,"Courses":[],"CourseModule":[],"SubCourses":[],"StudentList":[],"InventoryPool":[],"InstructorList":[],"UserId":0,"AssignedFrom":0,"FromRoleId":0,"SelectedInventoryPool":null,"HasModule":0,"IsUpload":false,"HelpVideoId":0,"InventorySource":null,"CourseLocation":null,"HasSubCourse":0,"RoleId":null,"UserRoles":null,"HSProductNumber":null,"ModBasic":null,"ModTotal":null};
-                var appInstrCandidateAssignment = new AppInstrCandidateAssignment();
-                appInstrCandidateAssignment.init();
-                break;
-            case currentController === "blockecards":
-                var appBlockECards = new AppBlockECard();
-                appBlockECards.init();
-                break;
-            case currentController == "trainingsitereclaim":
-                var appTCIntlReclaim = new AppIntlReclaim();
-                appTCIntlReclaim.init();
-                break;
-            case currentController == "trainingsiteassignment":
-                var appTSAssignment = new AppTSAssignment();
-                appTSAssignment.init();
-                break;
-        case currentController == "ecardtransaction":
-                var searchCardModel = {"CourseIds":null,"CourseName":null,"CourseDate":"\/Date(-62135575200000)\/","StartDate":"\/Date(-62135575200000)\/","EndDate":"\/Date(-62135575200000)\/","FirstName":null,"LastName":null,"Email":null,"Phone":null,"ZipCode":null,"ECardCode":null,"ECardUId":null,"EStatus":0,"Notes":null,"LocationId":0,"LocationName":null,"InstructorId":0,"InstructorIdNum":null,"TCId":0,"TCIdNumber":null,"TCName":null,"IsInstructorCard":false,"InstructorStudentId":null,"CourseType":0,"IsAdmin":false,"IsECardAdmin":false,"IsNECAdmin":false,"IsTCCTCA":false,"IsReadOnlyRole":false,"IsInstructor":false,"ModuleIds":null,"HasModules":false,"TrainingSiteName":null,"TSId":0,"IsSuperUser":false,"LMSName":null,"Courses":[],"Instructors":[],"ECardStatuses":[],"CourseModules":null,"SubCourses":null,"Profiles":null,"ProfileId":0,"TrainingCenters":[],"HasIntlAlignment":false,"SelectRoleId":0,"SubCourse":null,"SubCourseId":null,"IssueDate":"\/Date(-62135575200000)\/","AssignedBy":null,"AssignedRole":null,"ProductNumber":null};
-                var appECardTransStatus = new AppEcardTransStatus();
-                var appeCardAction = new AppECardAction(appECardTransStatus);
-                appECardTransStatus.init();
-                break;
-            case currentController == "issueecards":
-                var studentAssignmentViewModel = {"CourseId":null,"ProductNumber":null,"SubCourseId":null,"ParentCourseId":null,"CourseName":null,"SubCourseName":null,"TCId":0,"TCName":null,"LocationId":null,"LocationName":null,"TrainingSiteId":null,"TrainingSiteName":null,"InstructorId":0,"InstructorName":null,"Quantity":null,"IsConfirmed":false,"AvailableQty":0,"AssignedQty":null,"Courses":[],"CourseModule":[],"SubCourses":[],"StudentList":[],"InventoryPool":[],"InstructorList":[],"UserId":0,"AssignedFrom":0,"FromRoleId":0,"SelectedInventoryPool":null,"HasModule":0,"IsUpload":false,"HelpVideoId":0,"InventorySource":null,"CourseLocation":null,"HasSubCourse":0,"RoleId":null,"UserRoles":null,"HSProductNumber":null,"ModBasic":null,"ModTotal":null};
-                var appIssueECard = new AppIssueECard();
-                appIssueECard.init();
-                break;
-        }
-
-        $(document)
-            .ready(function () {
-                //Datepicker call
-                var comApp = new AppCommon();
-                comApp.initDatePicker();
-            });
-
-        $(document)
-            .ajaxStart(function(event) {
-                $('#loaderModal').modal('show');
-            })
-            .ajaxStop(function(e, xhr, settings) {
-                $('#loaderModal').modal('hide');
-                $('#loaderModal').removeData();
-            });
-
-</script>
-    <script src="js/ecards-template.js"></script>
-
-
-
-
-</body></html>
+    document.getElementById('btnEmail').addEventListener('click', function(){
+      var email = prompt("Enter recipient email address:");
+      if(email){
+        alert("A pretend email has been sent to " + email + ". (This is a static clone — implement server-side email to enable real emailing.)");
+      }
+    });
+  </script>
+</body>
+</html>
