@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AHA Navbar Replication</title>
-<style>
+<title>Claim eCard - Sheena K V</title>
 <style>
 body {
   margin: 0;
@@ -21,7 +20,6 @@ body {
   padding: 10px 30px;
   border-bottom: 1px solid #eee;
   flex-wrap: wrap;
-  background: #fff;
 }
 
 .logo {
@@ -33,7 +31,7 @@ body {
 .logo-text {
   font-size: 16px;
   line-height: 1.2;
-  color: #A6192E; /* Updated to AHA red */
+  color: #b00b1d;
 }
 
 .logo-text strong {
@@ -53,17 +51,12 @@ body {
 }
 
 .find-btn {
-  background: #A6192E; /* Updated to AHA red */
+  background: #b00b1d;
   color: #fff;
   padding: 6px 14px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
-}
-
-.find-btn:hover {
-  background: #8B0015; /* Darker shade for hover */
 }
 
 select {
@@ -75,7 +68,6 @@ select {
 .search {
   font-size: 18px;
   cursor: pointer;
-  color: #A6192E;
 }
 
 /* Header text */
@@ -86,10 +78,10 @@ select {
 }
 
 .header h2 {
-  color: #A6192E; /* Updated to AHA red */
+  color: #b00b1d;
   font-weight: normal;
   margin: 0;
-  border-bottom: 1px solid #A6192E; /* Updated to AHA red */
+  border-bottom: 1px solid #b00b1d;
   padding-bottom: 4px;
 }
 
@@ -123,7 +115,6 @@ select {
 .course-title {
   font-size: 22px;
   margin: 5px 0 20px 0;
-  color: #333;
 }
 
 /* Two column info */
@@ -163,7 +154,7 @@ select.ecard {
 
 .btn-view {
   margin-top: 15px;
-  background: #A6192E; /* Updated to AHA red */
+  background: #a00012;
   color: #fff;
   padding: 7px 14px;
   border: none;
@@ -171,11 +162,10 @@ select.ecard {
   cursor: pointer;
   font-weight: bold;
   letter-spacing: 1px;
-  transition: background 0.3s;
 }
 
 .btn-view:hover {
-  background: #8B0015; /* Darker shade for hover */
+  background: #7e0d10;
 }
 
 /* Footer Section */
@@ -201,7 +191,7 @@ select.ecard {
 }
 
 .footer-top a {
-  color: #A6192E; /* Updated to AHA red */
+  color: #004080;
   text-decoration: none;
 }
 
@@ -222,7 +212,7 @@ select.ecard {
 .footer-column h4 {
   font-size: 15px;
   margin-bottom: 10px;
-  color: #A6192E; /* Updated to AHA red */
+  color: #333;
 }
 
 .footer-column a {
@@ -234,7 +224,6 @@ select.ecard {
 }
 
 .footer-column a:hover {
-  color: #A6192E; /* Updated to AHA red */
   text-decoration: underline;
 }
 
@@ -252,11 +241,6 @@ select.ecard {
   width: 24px;
   margin: 0 8px;
   opacity: 0.8;
-  transition: opacity 0.3s;
-}
-
-.footer-icons img:hover {
-  opacity: 1;
 }
 
 .footer-bottom {
@@ -266,10 +250,6 @@ select.ecard {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
-}
-
-.footer-bottom a {
-  color: #A6192E; /* Updated to AHA red */
 }
 
 @media(max-width:768px){
@@ -283,34 +263,164 @@ select.ecard {
 </head>
 <body>
 
+<!-- Navbar -->
 <div class="navbar">
-  <div class="logo-container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/American_Heart_Association_Logo.svg" alt="American Heart Association Logo" class="logo-img">
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/American_Heart_Association_Logo.svg" alt="logo" width="50">
     <div class="logo-text">
-        <small style="font-size: 11px;">American Heart Association™</small><br>
-        <strong>CPR & First Aid</strong>
-        <em>Emergency Cardiovascular Care</em>
+      <strong>CPR & First Aid</strong><br>
+      <em>Emergency Cardiovascular Care</em>
     </div>
   </div>
   <div class="nav-links">
     <a href="#" class="find-btn">Find a Class</a>
-    
-    <a href="#">
-        <span style="font-size: 1.2em; vertical-align: middle; margin-right: 5px;">🛒</span> 
-        ShopCPR
-    </a>
-
-    <a href="#" class="dropdown">Get Involved <span style="font-size: 0.8em;">&#9662;</span></a>
-
-    <select class="language-select">
-        <option>Choose language</option>
-        <option>English</option>
-        <option>Español</option>
-    </select>
-    
-    <span class="search-icon">🔍</span>
+    <a href="#">ShopCPR</a>
+    <a href="#">Get Involved</a>
+    <select><option>Choose language</option></select>
+    <span class="search">🔍</span>
   </div>
 </div>
+
+<!-- Header Text -->
+<div class="header">
+  <h2>Hello, Sheena K V</h2>
+  <p>Use the links below to view, share or edit this eCard. You may also select to view all of your eCards.</p>
+</div>
+
+<!-- Card -->
+<div class="card">
+  <span class="status">Active</span>
+  <div class="course-title">Advanced Cardiovascular Life Support Course</div>
+
+  <div class="details">
+    <div class="left">
+      <div class="label">eCard Code</div>
+      <div class="value">245624204495</div>
+
+      <div class="label">Name</div>
+      <div class="value">Sheena K V</div>
+    </div>
+
+    <div class="right">
+      <div class="label">Training Center</div>
+      <div class="value">Indian Institute of Emergency Medical Services</div>
+
+      <div class="label">Training Site</div>
+      <div class="value">Indian Institute of Emergency Medical Services</div>
+
+      <div class="label">Instructor</div>
+      <div class="value">Gokul P V</div>
+
+      <div class="label">Course Date</div>
+      <div class="value">12/6/2023</div>
+
+      <div class="label">Recommended Renewal Date</div>
+      <div class="value">12/2025</div>
+
+      <hr style="border:0;border-top:1px solid #ccc;margin:15px 0;">
+
+      <div class="label">Select to view eCard:</div>
+      <select id="ecardSelect" class="ecard">
+        <option value="dummy_full.pdf">Full Size eCard - English International Version</option>
+        <option value="dummy_wallet.pdf">Wallet Size eCard - English International Version</option>
+      </select>
+
+      <button class="btn-view" id="viewBtn">VIEW</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-main">
+  <div class="footer-top">
+    <div>
+      <strong>Atlas U.S. Based Customer Support :</strong><br>
+      1-877-AHA-4CPR (1-877-242-4277)<br>
+      <a href="#">aha.support@heart.org</a><br>
+      Available 8 a.m. – 5 p.m. Central Time<br>
+      Monday – Friday
+    </div>
+    <div>
+      <strong>International Inquiries</strong><br>
+      <a href="#">Global Web Support (email)</a>
+    </div>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-column">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/American_Heart_Association_Logo.svg" alt="logo">
+      <p><strong>National Center</strong><br>
+      7272 Greenville Ave.<br>Dallas, TX 75231</p>
+
+      <p><strong>Customer Service</strong><br>1-800-AHA-USA-1<br>1-800-242-8721</p>
+
+      <button class="btn-view" style="margin-top:5px;padding:6px 10px;">Contact Us</button>
+
+      <p style="margin-top:10px;">Hours<br>
+      Monday – Friday: 7AM – 7PM CST<br>
+      Saturday: 9AM – 5PM CST<br>
+      Closed on Sundays</p>
+
+      <p>Tax Identification Number<br>13-5613797</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>About Us</h4>
+      <a href="#">About the AHA/ASA</a>
+      <a href="#">Annual Report</a>
+      <a href="#">AHA Financial Information</a>
+      <a href="#">International Programs</a>
+      <a href="#">Latest Heart and Stroke News</a>
+      <a href="#">AHA/ASA Media Newsroom</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Get Involved</h4>
+      <a href="#">Donate Now</a>
+      <a href="#">Make a Memorial Gift</a>
+      <a href="#">Ways to Give</a>
+      <a href="#">Advocate</a>
+      <a href="#">Volunteer</a>
+      <a href="#">Go Red For Women</a>
+      <a href="#">ShopHeart</a>
+      <a href="#">ShopCPR</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Our Sites</h4>
+      <a href="#">American Stroke Association</a>
+      <a href="#">CPR & ECC</a>
+      <a href="#">Professional Heart Daily</a>
+      <a href="#">More Sites</a>
+    </div>
+  </div>
+
+  <div class="footer-icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Pinterest">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+  </div>
+
+  <div class="footer-bottom">
+    AHA Careers | Privacy Policy | Medical Advice Disclaimer | Copyright Policy | Accessibility Statement | Ethics Policy | Conflict of Interest Policy | Linking Policy<br>
+    Content Editorial Guidelines | Diversity | Suppliers & Providers | State Fundraising Notices | Cookies Settings<br><br>
+    ©2025 American Heart Association, Inc. All rights reserved. Unauthorized use prohibited.<br>
+    The American Heart Association is a qualified 501(c)(3) tax-exempt organization.<br>
+    *Red Dress™, Go Red™ AHA ; National Wear Red Day® is a registered trademark.<br><br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/HONcode_icon.png" alt="HONcode" width="40"><br>
+    This site complies with the HONcode Standard for trustworthy health information: <a href="#" style="color:#004080;">verify here</a>.
+  </div>
+</footer>
+
+<script>
+document.getElementById("viewBtn").addEventListener("click", function() {
+  const file = document.getElementById("ecardSelect").value;
+  window.open(file, "_blank");
+});
+</script>
 
 </body>
 </html>
