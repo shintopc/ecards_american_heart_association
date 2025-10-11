@@ -49,7 +49,7 @@ body {
 
 .find-btn {
   background: #A6192E; /* Updated to AHA red */
-  color: #fff;
+  color: #fff; /* Changed from black to white */
   padding: 6px 14px;
   border-radius: 25px;
   text-decoration: none;
@@ -222,15 +222,18 @@ select.ecard {
 .footer-column h4 {
   font-size: 15px;
   margin-bottom: 10px;
-  color: #A6192E; /* Updated to AHA red */
+  color: #000; /* Changed from red to black */
 }
 
 .footer-column a {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #222;
   text-decoration: none;
   font-size: 13px;
   margin: 4px 0;
+  padding: 2px 0;
 }
 
 .footer-column a:hover {
@@ -242,6 +245,23 @@ select.ecard {
   width: 100%; /* Footer logo now uses percentage */
   max-width: 60px; /* Maximum size */
   margin-bottom: 10px;
+}
+
+.contact-btn {
+  margin-top: 5px;
+  background: #fff; /* White background */
+  color: #A6192E; /* Red text */
+  padding: 6px 10px;
+  border: 1px solid #A6192E;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.contact-btn:hover {
+  background: #A6192E; /* Red background on hover */
+  color: #fff; /* White text on hover */
 }
 
 .footer-icons {
@@ -299,7 +319,15 @@ select.ecard {
     <a href="#" class="find-btn">Find a Class</a>
     <a href="#">ShopCPR</a>
     <a href="#">Get Involved</a>
-    <select><option>Choose language</option></select>
+    <select>
+      <option>Choose language</option>
+      <option>English</option>
+      <option>Español</option>
+      <option>Français</option>
+      <option>Deutsch</option>
+      <option>中文</option>
+      <option>日本語</option>
+    </select>
     <span class="search">🔍</span>
   </div>
 </div>
@@ -380,7 +408,7 @@ select.ecard {
 
       <p><strong>Customer Service</strong><br>1-800-AHA-USA-1<br>1-800-242-8721</p>
 
-      <button class="btn-view" style="margin-top:5px;padding:6px 10px;">Contact Us</button>
+      <button class="contact-btn">Contact Us</button>
 
       <p style="margin-top:10px;">Hours<br>
       Monday – Friday: 7AM – 7PM CST<br>
@@ -392,33 +420,33 @@ select.ecard {
 
     <div class="footer-column">
       <h4>About Us</h4>
-      <a href="#">About the AHA/ASA</a>
-      <a href="#">Annual Report</a>
-      <a href="#">AHA Financial Information</a>
-      <a href="#">International Programs</a>
-      <a href="#">Latest Heart and Stroke News</a>
-      <a href="#">AHA/ASA Media Newsroom</a>
-      <a href="#">Careers</a>
+      <a href="#">About the AHA/ASA <span>></span></a>
+      <a href="#">Annual Report <span>></span></a>
+      <a href="#">AHA Financial Information <span>></span></a>
+      <a href="#">International Programs <span>></span></a>
+      <a href="#">Latest Heart and Stroke News <span>></span></a>
+      <a href="#">AHA/ASA Media Newsroom <span>></span></a>
+      <a href="#">Careers <span>></span></a>
     </div>
 
     <div class="footer-column">
       <h4>Get Involved</h4>
-      <a href="#">Donate Now</a>
-      <a href="#">Make a Memorial Gift</a>
-      <a href="#">Ways to Give</a>
-      <a href="#">Advocate</a>
-      <a href="#">Volunteer</a>
-      <a href="#">Go Red For Women</a>
-      <a href="#">ShopHeart</a>
-      <a href="#">ShopCPR</a>
+      <a href="#">Donate Now <span>></span></a>
+      <a href="#">Make a Memorial Gift <span>></span></a>
+      <a href="#">Ways to Give <span>></span></a>
+      <a href="#">Advocate <span>></span></a>
+      <a href="#">Volunteer <span>></span></a>
+      <a href="#">Go Red For Women <span>></span></a>
+      <a href="#">ShopHeart <span>></span></a>
+      <a href="#">ShopCPR <span>></span></a>
     </div>
 
     <div class="footer-column">
       <h4>Our Sites</h4>
-      <a href="#">American Stroke Association</a>
-      <a href="#">CPR & ECC</a>
-      <a href="#">Professional Heart Daily</a>
-      <a href="#">More Sites</a>
+      <a href="#">American Stroke Association <span>></span></a>
+      <a href="#">CPR & ECC <span>></span></a>
+      <a href="#">Professional Heart Daily <span>></span></a>
+      <a href="#">More Sites <span>></span></a>
     </div>
   </div>
 
