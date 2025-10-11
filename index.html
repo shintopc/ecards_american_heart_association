@@ -221,8 +221,9 @@ select.ecard {
 
 .footer-column h4 {
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Increased gap */
   color: #000; /* Changed from red to black */
+  font-weight: 600; /* Less bold font */
 }
 
 .footer-column a {
@@ -232,13 +233,18 @@ select.ecard {
   color: #222;
   text-decoration: none;
   font-size: 13px;
-  margin: 4px 0;
+  margin: 8px 0; /* Increased gap between lines */
   padding: 2px 0;
 }
 
 .footer-column a:hover {
   color: #A6192E; /* Updated to AHA red */
   text-decoration: underline;
+}
+
+.footer-column p {
+  line-height: 1.6; /* Increased line spacing */
+  margin-bottom: 15px; /* Increased gap between paragraphs */
 }
 
 .footer-column img {
@@ -265,33 +271,39 @@ select.ecard {
 }
 
 .footer-icons {
-  text-align: center;
-  margin-top: 20px;
+  text-align: left; /* Aligned to left */
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd; /* Thin grey line above */
 }
 
 .footer-icons img {
   width: 24px;
-  margin: 0 8px;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-  margin-top: 20px;
+  margin: 0 8px 0 0; /* Adjusted margin for left alignment */
+  opacity: 0.7; /* Grey color */
+  filter: grayscale(100%) brightness(70%); /* Make icons grey */
+  transition: all 0.3s;
 }
 
 .footer-icons img:hover {
   opacity: 1;
+  filter: grayscale(0%) brightness(100%); /* Color on hover */
 }
 
 .footer-bottom {
   text-align: center;
   color: #666;
-  font-size: 12px;
-  margin-top: 20px;
-  padding-top: 10px;
+  font-size: 14px; /* Increased text size */
+  margin-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid #ddd;
+  font-weight: 300; /* Thin font */
+  line-height: 1.8; /* Increased line spacing */
 }
 
 .footer-bottom a {
   color: #A6192E; /* Updated to AHA red */
+  font-weight: 400; /* Slightly bolder for links */
 }
 
 @media(max-width:768px){
@@ -302,6 +314,8 @@ select.ecard {
   .footer-content { flex-direction: column; }
   .footer-column { width: 100%; }
   .contact-container { flex-direction: column; }
+  .footer-icons { text-align: center; }
+  .footer-icons img { margin: 0 8px; }
 }
 
 @media(max-width:480px){
@@ -411,7 +425,7 @@ select.ecard {
 
       <button class="contact-btn">Contact Us</button>
 
-      <p style="margin-top:10px;">Hours<br>
+      <p style="margin-top:15px;">Hours<br>
       Monday – Friday: 7AM – 7PM CST<br>
       Saturday: 9AM – 5PM CST<br>
       Closed on Sundays</p>
