@@ -5,15 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claim eCard - Sheena K V</title>
 <style>
+/* Basic reset */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
   margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #222;
 }
 
-/* Header Section */
+/* Full width header image */
+.header-img, .footer-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #b00b1d;
+}
+
+.logo-text strong {
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.find-btn {
+  background: #b00b1d;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+select {
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Header text */
 .header {
   margin: 40px auto 10px auto;
   max-width: 900px;
@@ -21,7 +87,7 @@ body {
 }
 
 .header h2 {
-  color: #b00b1d; /* Deep Red same as uploaded */
+  color: #b00b1d;
   font-weight: normal;
   margin: 0;
   border-bottom: 1px solid #b00b1d;
@@ -34,7 +100,7 @@ body {
   margin-top: 8px;
 }
 
-/* Card Container */
+/* Card layout */
 .card {
   border: 1px solid #e0e0e0;
   box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
@@ -45,7 +111,7 @@ body {
 }
 
 .status {
-  background: #198754; /* Green */
+  background: #198754;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
@@ -57,11 +123,10 @@ body {
 
 .course-title {
   font-size: 22px;
-  font-weight: normal;
   margin: 5px 0 20px 0;
 }
 
-/* Two column grid */
+/* Two column info */
 .details {
   display: flex;
   justify-content: space-between;
@@ -88,11 +153,7 @@ body {
   margin-bottom: 14px;
 }
 
-select, button {
-  font-family: inherit;
-}
-
-select {
+select.ecard {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -116,24 +177,54 @@ select {
   background: #7e0d10;
 }
 
+/* Footer */
 .footer {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 10px 20px;
   text-align: center;
-  font-size: 13px;
   color: #777;
+  font-size: 13px;
+  padding: 15px 10px;
   border-top: 1px solid #eee;
+}
+
+@media(max-width:768px){
+  .navbar { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .nav-links { flex-wrap: wrap; gap: 10px; }
+  .left, .right { width: 100%; }
+  .header h2 { font-size: 20px; }
+  .course-title { font-size: 18px; }
 }
 </style>
 </head>
 <body>
 
+<!-- Full width header image -->
+<img src="https://picsum.photos/1200/250?random=1" alt="Header" class="header-img">
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/American_Heart_Association_Logo.svg" alt="logo" width="50">
+    <div class="logo-text">
+      <strong>CPR & First Aid</strong><br>
+      <em>Emergency Cardiovascular Care</em>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="find-btn">Find a Class</a>
+    <a href="#">ShopCPR</a>
+    <a href="#">Get Involved</a>
+    <select><option>Choose language</option></select>
+    <span class="search">🔍</span>
+  </div>
+</div>
+
+<!-- Header Text -->
 <div class="header">
   <h2>Hello, Sheena K V</h2>
   <p>Use the links below to view, share or edit this eCard. You may also select to view all of your eCards.</p>
 </div>
 
+<!-- Card -->
 <div class="card">
   <span class="status">Active</span>
   <div class="course-title">Advanced Cardiovascular Life Support Course</div>
@@ -166,18 +257,29 @@ select {
       <hr style="border:0;border-top:1px solid #ccc;margin:15px 0;">
 
       <div class="label">Select to view eCard:</div>
-      <select>
-        <option>Full Size eCard - English International Version</option>
+      <select id="ecardSelect" class="ecard">
+        <option value="dummy_full.pdf">Full Size eCard - English International Version</option>
+        <option value="dummy_wallet.pdf">Wallet Size eCard - English International Version</option>
       </select>
 
-      <button class="btn-view">VIEW</button>
+      <button class="btn-view" id="viewBtn">VIEW</button>
     </div>
   </div>
 </div>
 
+<!-- Footer -->
+<img src="https://picsum.photos/1200/250?random=2" alt="Footer" class="footer-img">
+
 <div class="footer">
   © 2025 American Heart Association — eCard Clone Page
 </div>
+
+<script>
+document.getElementById("viewBtn").addEventListener("click", function() {
+  const file = document.getElementById("ecardSelect").value;
+  window.open(file, "_blank");
+});
+</script>
 
 </body>
 </html>
