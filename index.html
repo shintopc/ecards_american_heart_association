@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claim eCard - Sheena K V</title>
 <style>
-/* Basic reset */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -13,8 +12,8 @@ body {
   color: #222;
 }
 
-/* Full width header image */
-.header-img, .footer-img {
+/* Header image */
+.header-img {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -177,28 +176,103 @@ select.ecard {
   background: #7e0d10;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  color: #777;
+/* Footer Section */
+.footer-main {
+  background-color: #f4f7f7;
+  color: #333;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+.footer-top {
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 15px;
+}
+
+.footer-top div {
+  margin: 10px 0;
+}
+
+.footer-top a {
+  color: #004080;
+  text-decoration: none;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  width: 22%;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer-column a {
+  display: block;
+  color: #222;
+  text-decoration: none;
   font-size: 13px;
-  padding: 15px 10px;
-  border-top: 1px solid #eee;
+  margin: 4px 0;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-column img {
+  max-width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-icons img {
+  width: 24px;
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
 }
 
 @media(max-width:768px){
   .navbar { flex-direction: column; align-items: flex-start; gap: 10px; }
   .nav-links { flex-wrap: wrap; gap: 10px; }
   .left, .right { width: 100%; }
-  .header h2 { font-size: 20px; }
-  .course-title { font-size: 18px; }
+  .footer-content { flex-direction: column; }
+  .footer-column { width: 100%; }
 }
 </style>
 </head>
 <body>
 
-<!-- Full width header image -->
-<img src="Capture.JPG" alt="Header" class="header-img">
+<!-- Header image -->
+<img src="https://picsum.photos/1200/250?random=1" alt="Header" class="header-img">
 
 <!-- Navbar -->
 <div class="navbar">
@@ -268,11 +342,89 @@ select.ecard {
 </div>
 
 <!-- Footer -->
-<img src="Capture2.JPG" alt="Footer" class="footer-img">
+<footer class="footer-main">
+  <div class="footer-top">
+    <div>
+      <strong>Atlas U.S. Based Customer Support :</strong><br>
+      1-877-AHA-4CPR (1-877-242-4277)<br>
+      <a href="#">aha.support@heart.org</a><br>
+      Available 8 a.m. – 5 p.m. Central Time<br>
+      Monday – Friday
+    </div>
+    <div>
+      <strong>International Inquiries</strong><br>
+      <a href="#">Global Web Support (email)</a>
+    </div>
+  </div>
 
-<div class="footer">
-  © 2025 American Heart Association — eCard Clone Page
-</div>
+  <div class="footer-content">
+    <div class="footer-column">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/American_Heart_Association_Logo.svg" alt="logo">
+      <p><strong>National Center</strong><br>
+      7272 Greenville Ave.<br>Dallas, TX 75231</p>
+
+      <p><strong>Customer Service</strong><br>1-800-AHA-USA-1<br>1-800-242-8721</p>
+
+      <button class="btn-view" style="margin-top:5px;padding:6px 10px;">Contact Us</button>
+
+      <p style="margin-top:10px;">Hours<br>
+      Monday – Friday: 7AM – 7PM CST<br>
+      Saturday: 9AM – 5PM CST<br>
+      Closed on Sundays</p>
+
+      <p>Tax Identification Number<br>13-5613797</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>About Us</h4>
+      <a href="#">About the AHA/ASA</a>
+      <a href="#">Annual Report</a>
+      <a href="#">AHA Financial Information</a>
+      <a href="#">International Programs</a>
+      <a href="#">Latest Heart and Stroke News</a>
+      <a href="#">AHA/ASA Media Newsroom</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Get Involved</h4>
+      <a href="#">Donate Now</a>
+      <a href="#">Make a Memorial Gift</a>
+      <a href="#">Ways to Give</a>
+      <a href="#">Advocate</a>
+      <a href="#">Volunteer</a>
+      <a href="#">Go Red For Women</a>
+      <a href="#">ShopHeart</a>
+      <a href="#">ShopCPR</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Our Sites</h4>
+      <a href="#">American Stroke Association</a>
+      <a href="#">CPR & ECC</a>
+      <a href="#">Professional Heart Daily</a>
+      <a href="#">More Sites</a>
+    </div>
+  </div>
+
+  <div class="footer-icons">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Pinterest">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+  </div>
+
+  <div class="footer-bottom">
+    AHA Careers | Privacy Policy | Medical Advice Disclaimer | Copyright Policy | Accessibility Statement | Ethics Policy | Conflict of Interest Policy | Linking Policy<br>
+    Content Editorial Guidelines | Diversity | Suppliers & Providers | State Fundraising Notices | Cookies Settings<br><br>
+    ©2025 American Heart Association, Inc. All rights reserved. Unauthorized use prohibited.<br>
+    The American Heart Association is a qualified 501(c)(3) tax-exempt organization.<br>
+    *Red Dress™, Go Red™ AHA ; National Wear Red Day® is a registered trademark.<br><br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/HONcode_icon.png" alt="HONcode" width="40"><br>
+    This site complies with the HONcode Standard for trustworthy health information: <a href="#" style="color:#004080;">verify here</a>.
+  </div>
+</footer>
 
 <script>
 document.getElementById("viewBtn").addEventListener("click", function() {
