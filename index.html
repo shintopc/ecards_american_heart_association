@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AHA Navbar Replication</title>
 <style>
+<style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #fff;
+  color: #222;
 }
 
 /* Navbar */
@@ -19,33 +21,23 @@ body {
   padding: 10px 30px;
   border-bottom: 1px solid #eee;
   flex-wrap: wrap;
+  background: #fff;
 }
 
-.logo-container {
+.logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .logo-text {
-  /* This is the American Heart Association red color used in the index.html file */
-  color: #b00b1d; 
+  font-size: 16px;
   line-height: 1.2;
+  color: #A6192E; /* Updated to AHA red */
 }
 
 .logo-text strong {
   font-size: 22px;
-  display: block; /* Ensures the strong text is on its own line */
-}
-
-.logo-text em {
-  font-size: 16px;
-  font-style: normal; /* Removes default italic style from <em> */
-}
-
-.logo-img {
-    /* Set width for the logo, as seen in the index.html */
-    width: 50px; 
 }
 
 .nav-links {
@@ -54,41 +46,238 @@ body {
   gap: 15px;
 }
 
-.nav-links a, .nav-links .dropdown {
+.nav-links a {
   text-decoration: none;
   color: #333;
   font-size: 14px;
 }
 
-/* Style for "Find a Class" button */
 .find-btn {
-  background: #b00b1d; /* AHA Red */
+  background: #A6192E; /* Updated to AHA red */
   color: #fff;
   padding: 6px 14px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s;
 }
 
-/* Style for the language dropdown */
-.language-select {
+.find-btn:hover {
+  background: #8B0015; /* Darker shade for hover */
+}
+
+select {
   padding: 5px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  min-width: 150px; /* To match the width in the image */
 }
 
-.search-icon {
+.search {
   font-size: 18px;
   cursor: pointer;
-  margin-left: 5px;
-  color: #222;
+  color: #A6192E;
 }
 
-/* Media query for responsiveness, though the image shows desktop view */
+/* Header text */
+.header {
+  margin: 40px auto 10px auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.header h2 {
+  color: #A6192E; /* Updated to AHA red */
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid #A6192E; /* Updated to AHA red */
+  padding-bottom: 4px;
+}
+
+.header p {
+  color: #555;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+/* Card layout */
+.card {
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff;
+}
+
+.status {
+  background: #198754;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-size: 22px;
+  margin: 5px 0 20px 0;
+  color: #333;
+}
+
+/* Two column info */
+.details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 3px solid #198754;
+  padding-top: 20px;
+}
+
+.left, .right {
+  width: 48%;
+  min-width: 260px;
+}
+
+.label {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.value {
+  font-size: 15px;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+select.ecard {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.btn-view {
+  margin-top: 15px;
+  background: #A6192E; /* Updated to AHA red */
+  color: #fff;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+.btn-view:hover {
+  background: #8B0015; /* Darker shade for hover */
+}
+
+/* Footer Section */
+.footer-main {
+  background-color: #f4f7f7;
+  color: #333;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+.footer-top {
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 15px;
+}
+
+.footer-top div {
+  margin: 10px 0;
+}
+
+.footer-top a {
+  color: #A6192E; /* Updated to AHA red */
+  text-decoration: none;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  width: 22%;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #A6192E; /* Updated to AHA red */
+}
+
+.footer-column a {
+  display: block;
+  color: #222;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.footer-column a:hover {
+  color: #A6192E; /* Updated to AHA red */
+  text-decoration: underline;
+}
+
+.footer-column img {
+  max-width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-icons img {
+  width: 24px;
+  margin: 0 8px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.footer-icons img:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.footer-bottom a {
+  color: #A6192E; /* Updated to AHA red */
+}
+
 @media(max-width:768px){
   .navbar { flex-direction: column; align-items: flex-start; gap: 10px; }
   .nav-links { flex-wrap: wrap; gap: 10px; }
+  .left, .right { width: 100%; }
+  .footer-content { flex-direction: column; }
+  .footer-column { width: 100%; }
 }
 </style>
 </head>
